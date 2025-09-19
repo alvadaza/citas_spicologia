@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Psicóloga - Reserva online</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="brand">
+          <i class="fas fa-brain"></i> Dra. María del Pilar Garcia — Psicóloga
+        </div>
+        <nav class="nav">
+          <a href="#Servicios">Servicios</a>
+          <a href="#terapia">Terapia</a>
+          <a href="#reservar" class="cta">Reservar cita</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <!-- Sección de perfil -->
+      <section class="profile-section">
+        <img
+          src="/image/foto_perfil.png"
+          alt="Foto profesional"
+          class="profile-image"
+        />
+        <h1>María del Pilar Garcia</h1>
+        <p class="profile-title">
+          Psicóloga · Mindfulness · Terapia Cognitivo Conductual
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>fundacionbuensuceso25@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+57 320 4011554</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Bogotá Centro</span>
+          </div>
+        </div>
+
+        <a href="mailto:contacto@psicologa.com" class="btn-contact btn-outline"
+          >Enviar correo</a
+        >
+        <a href="tel:+573133574711" class="btn-contact btn-outline"
+          >Llamar ahora</a
+        >
+        <a href="https://wa.me/573133574711" class="btn-contact btn-primary"
+          >Contactar por WhatsApp</a
+        >
+      </section>
+
+      <!-- Sección de contenido -->
+      <div class="content-section" id="Servicios">
+        <!-- Sobre mí -->
+        <div class="card">
+          <h2><i class="fas fa-user"></i> Sobre mí</h2>
+          <p>
+            Soy Psicóloga con matrícula profesional No. 3204011554. Egresada de
+            la Universidad de Colombia. Soy experta en Hipnoterapia Clínica de
+            la Asociación de Hipnosis Clínica Experimental. Soy miembro de la
+            Organización Profesional De Hipnosis Clínica de España.
+          </p>
+          <p>
+            En mis terapias utilizó diferentes técnicas de terapia como:
+            Técnicas Comportamentales y Cognitivas (CBT), Logoterapia,
+            Hipnoterapia, Programación Neurolingüística (NPL) y Terapia centrada
+            en la solución, entre otras. Estas técnicas son utilizadas para
+            permitir al paciente hacer cambios positivos en sus debilidades
+            comportamentales y emocionales.
+          </p>
+          <p>
+            Atiendo de manera presencial en mi consultorio en la ciudad de
+            Bogotá Centro. Además, ofrezco atención psicológica online para
+            comodidad de mis pacientes.
+          </p>
+        </div>
+
+        <!-- Servicios -->
+        <div class="card">
+          <h2><i class="fas fa-concierge-bell"></i> Servicios y Tarifas</h2>
+          <div class="services-grid">
+            <div class="service-card">
+              <h3><i class="fas fa-heart"></i> Psicoterapia</h3>
+              <p>Sesiones individuales de terapia psicológica personalizada.</p>
+              <button onclick="contactar('Psicoterapia')">
+                Solicitar información
+              </button>
+            </div>
+
+            <div class="service-card">
+              <h3><i class="fas fa-venus-mars"></i> Terapia de pareja</h3>
+              <p>
+                Mejora la comunicación y resolución de conflictos en tu
+                relación.
+              </p>
+              <button onclick="contactar('Terapia de pareja')">
+                Solicitar información
+              </button>
+            </div>
+
+            <div class="service-card">
+              <h3><i class="fas fa-seedling"></i> Crecimiento personal</h3>
+              <p>
+                Desarrolla tu máximo potencial y alcanza tus metas personales.
+              </p>
+              <button onclick="contactar('Crecimiento personal')">
+                Solicitar información
+              </button>
+            </div>
+
+            <div class="service-card">
+              <h3><i class="fas fa-brain"></i> Trastornos psicológicos</h3>
+              <p>
+                Evaluación y tratamiento especializado para diversos trastornos.
+              </p>
+              <button onclick="contactar('Trastornos psicológicos')">
+                Solicitar información
+              </button>
+            </div>
+
+            <div class="service-card">
+              <h3><i class="fas fa-star"></i> Autoestima</h3>
+              <p>Fortalece tu autoimagen y confianza en ti mismo.</p>
+              <button onclick="contactar('Autoestima')">
+                Solicitar información
+              </button>
+            </div>
+
+            <div class="service-card">
+              <h3><i class="fas fa-cloud-rain"></i> Depresión</h3>
+              <p>Apoyo especializado para superar estados depresivos.</p>
+              <button onclick="contactar('Depresión')">
+                Solicitar información
+              </button>
+            </div>
+
+            <div class="service-card">
+              <h3><i class="fas fa-running"></i> Estrés</h3>
+              <p>
+                Técnicas para manejar y reducir el estrés en tu vida diaria.
+              </p>
+              <button onclick="contactar('Estrés')">
+                Solicitar información
+              </button>
+            </div>
+
+            <div class="service-card">
+              <h3><i class="fas fa-heartbeat"></i> Ansiedad</h3>
+              <p>Tratamiento efectivo para diferentes tipos de ansiedad.</p>
+              <button onclick="contactar('Ansiedad')">
+                Solicitar información
+              </button>
+            </div>
+
+            <div class="service-card">
+              <h3><i class="fas fa-clock"></i> Terapia breve</h3>
+              <p>Enfocada en soluciones concretas en un tiempo limitado.</p>
+              <button onclick="contactar('Terapia breve')">
+                Solicitar información
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget de reservas -->
+        <div class="booking-widget" id="reservar">
+          <h2><i class="fas fa-calendar-alt"></i> Agenda tu cita</h2>
+
+          <!-- navegación de semanas -->
+          <div class="week-nav">
+            <button id="prev-week" title="Semana anterior">‹</button>
+            <div id="week-range">Semana actual</div>
+            <button id="next-week" title="Semana siguiente">›</button>
+          </div>
+
+          <!-- contenedor de la semana: días y slots -->
+          <div id="week-grid" class="week-grid">
+            <!-- Los horarios se cargarán con JavaScript -->
+            <div class="day-column">
+              <div class="day-header">Lun 24 Jun</div>
+              <div class="time-slot">9:00 AM</div>
+              <div class="time-slot">10:30 AM</div>
+              <div class="time-slot booked">12:00 PM</div>
+              <div class="time-slot">3:00 PM</div>
+            </div>
+            <div class="day-column">
+              <div class="day-header">Mar 25 Jun</div>
+              <div class="time-slot">9:00 AM</div>
+              <div class="time-slot booked">10:30 AM</div>
+              <div class="time-slot">12:00 PM</div>
+              <div class="time-slot">4:30 PM</div>
+            </div>
+            <div class="day-column">
+              <div class="day-header">Mié 26 Jun</div>
+              <div class="time-slot">10:00 AM</div>
+              <div class="time-slot">11:30 AM</div>
+              <div class="time-slot">2:00 PM</div>
+              <div class="time-slot booked">5:00 PM</div>
+            </div>
+          </div>
+
+          <p class="booking-note">
+            Selecciona un horario disponible. Los horarios se actualizan en
+            tiempo real.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sección de terapias especiales -->
+    <section class="therapy-services" id="terapia">
+      <div class="container">
+        <h2 class="section-title">Servicios y Terapias Complementarias</h2>
+        <div class="therapy-grid">
+          <div class="therapy-card">
+            <img
+              src="/image/baile.png"
+              alt="Terapia de Baile"
+              class="therapy-image"
+            />
+            <div class="therapy-content">
+              <h3>Terapia de Baile</h3>
+              <p>
+                Explora tu cuerpo y emociones a través del movimiento y la
+                música. Una forma creativa de expresión y liberación emocional.
+              </p>
+            </div>
+          </div>
+
+          <div class="therapy-card">
+            <img
+              src="/image/street-artist-489789_640.jpg"
+              alt="Terapia de Teatro"
+              class="therapy-image"
+            />
+            <div class="therapy-content">
+              <h3>Terapia de Teatro</h3>
+              <p>
+                Mejora tu expresión, confianza y manejo de emociones a través
+                del arte escénico. Ideal para desarrollar habilidades sociales.
+              </p>
+            </div>
+          </div>
+
+          <div class="therapy-card">
+            <img
+              src="/image/massage-5578595_640.jpg"
+              alt="Terapia de Masajes"
+              class="therapy-image"
+            />
+            <div class="therapy-content">
+              <h3>Terapia de Masajes</h3>
+              <p>
+                Relaja tu cuerpo y libera el estrés acumulado para mejorar tu
+                bienestar general. Combinamos técnicas de relajación y
+                liberación muscular.
+              </p>
+            </div>
+          </div>
+
+          <div class="therapy-card">
+            <img
+              src="/image/bench-6761316_640.jpg"
+              alt="Terapia en Sauna"
+              class="therapy-image"
+            />
+            <div class="therapy-content">
+              <h3>Terapia en Sauna</h3>
+              <p>
+                Desintoxica tu cuerpo y relaja tu mente en un espacio de calma y
+                calor. Perfecto para complementar procesos de reducción de
+                ansiedad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal de reserva -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <button id="close-modal" class="close-modal">×</button>
+        <h3 id="modal-title">Reservar cita</h3>
+        <form id="booking-form">
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" />
+          </div>
+
+          <div class="form-group">
+            <label for="servicio">Servicio</label>
+            <select id="servicio" name="servicio">
+              <option>Primera visita (60 min)</option>
+              <option>Consulta (50 min)</option>
+              <option>Consulta online</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Motivo de la consulta</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
+          </div>
+
+          <input type="hidden" name="fecha" />
+          <input type="hidden" name="hora" />
+
+          <div class="modal-actions">
+            <button type="submit" class="modal-btn btn-confirm">
+              Confirmar reserva
+            </button>
+            <button
+              type="button"
+              id="cancel-booking"
+              class="modal-btn btn-cancel"
+            >
+              Cancelar
+            </button>
+          </div>
+          <p id="booking-msg" class="form-message"></p>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Información de contacto -->
+        <div class="footer-info">
+          <h3>📍 Contacto</h3>
+          <p>Dirección: Transversal 29 No. 34-29 La Soledad, Bogotá</p>
+          <p>Teléfono: <a href="tel:+573001234567">+57 320 4011554</a></p>
+          <p>
+            Email:
+            <a href="fundacionbuensuceso@gmail.com"
+              >fundacionbuensuceso25@gmail.com</a
+            >
+          </p>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="footer-social">
+          <h3>🌎 Síguenos</h3>
+          <a
+            href="https://www.instagram.com/fundacionbuensuceso/"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+              alt="Instagram"
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/people/Fundaci%25C3%25B3n-Nuestra-Se%25C3%25B1ora-del-Buen-Suceso-Fundabs/100064481600640/"
+            target="_blank"
+            aria-label="Facebook"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+              alt="Facebook"
+            />
+          </a>
+          <a
+            href="https://www.youtube.com/@FUNDABSCOLOMBIA"
+            target="_blank"
+            aria-label="YouTube"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"
+              alt="YouTube"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2025 - Todos los derechos reservados. Diseño Web:
+          <a href="https://protechsolucionesplus.com/"
+            >proteschsolucionesplus.com</a
+          >
+        </p>
+      </div>
+    </footer>
+    <script type="module" src="/js/index.js"></script>
+    <script></script>
+  </body>
+</html>

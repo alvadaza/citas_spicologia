@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#333333" />
+
+    <title>Panel Admin - Citas</title>
+    <link rel="stylesheet" href="/proyecto1ana/css/style.css" />
+    <link rel="stylesheet" href="/css/citas.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <h1>📋 Panel de Citas</h1>
+      <button id="logout-btn" class="btn-primary">Cerrar Sesión</button>
+    </header>
+
+    <main class="form-container">
+      <!-- Estadísticas -->
+      <div class="estadisticas">
+        <div class="card-estadistica total">
+          <h3>Total</h3>
+          <p id="total-citas">0</p>
+        </div>
+        <div class="card-estadistica confirmadas">
+          <h3>Confirmadas</h3>
+          <p id="citas-confirmadas">0</p>
+        </div>
+        <div class="card-estadistica canceladas">
+          <h3>Canceladas</h3>
+          <p id="citas-canceladas">0</p>
+        </div>
+        <div class="card-estadistica pendientes">
+          <h3>Pendientes</h3>
+          <p id="citas-pendientes">0</p>
+        </div>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filtros">
+        <label>📅 Fecha:</label>
+        <input type="date" id="filtro-fecha" />
+        <label>📌 Estado:</label>
+        <select id="filtro-estado">
+          <option value="">Todos</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="confirmada">Confirmada</option>
+          <option value="cancelada">Cancelada</option>
+        </select>
+        <input
+          type="text"
+          id="buscador"
+          placeholder="🔎 Buscar por nombre, email o teléfono..."
+        />
+        <button id="btn-filtrar" class="btn-primary">Filtrar</button>
+        <button id="btn-limpiar" class="btn-secondary">Limpiar</button>
+        <button id="btn-exportar" class="btn-primary">📤 Exportar Excel</button>
+      </div>
+
+      <table id="tabla-citas">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Mensaje</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
+    <script type="module" src="/js/citas.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((reg) => console.log("Service Worker registrado", reg))
+          .catch((err) => console.error("Error al registrar el SW", err));
+      }
+    </script>
+  </body>
+</html>
