@@ -23,7 +23,7 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
   color: var(--dark);
-  background-color: #dcdaca;
+  background-color: var(--light);
 }
 
 .container {
