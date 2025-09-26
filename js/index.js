@@ -162,7 +162,8 @@ bookingForm.addEventListener("submit", async (e) => {
   if (error) {
     bookingMsg.textContent = "❌ Error al guardar: " + error.message;
   } else {
-    bookingMsg.textContent = "✅ Reserva confirmada";
+    bookingMsg.textContent =
+      "✅ Reserva confirmada ¡ PRONTO TE CONTACTAREMOS !";
     bookingForm.reset();
     setTimeout(() => {
       closeModalFunc();
