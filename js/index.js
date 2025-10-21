@@ -1,9 +1,9 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 // --- CONFIGURA TU SUPABASE ---
-const supabaseUrl = "https://vzxmcaxbqdrxahxfucuj.supabase.co";
+const supabaseUrl = "https://dbhzwjgfknkyiesudnji.supabase.co";
 const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6eG1jYXhicWRyeGFoeGZ1Y3VqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMzk1NjEsImV4cCI6MjA3MzgxNTU2MX0.iMeANU2EJUb9yZLFCbEYWHFDPzoHsgV59gdJC2O0a2g"; // Usa la anon key de Supabase
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRiaHp3amdma25reWllc3VkbmppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwNTIxMjYsImV4cCI6MjA3NjYyODEyNn0.-_SubqCHNLF5QfbqOFAl7jJuemyAOrwLp9WkbbEx5MM"; // Usa la anon key de Supabase
 const supabase = createClient(supabaseUrl, supabaseKey);
 // Funcionalidad básica para el modal
 const modal = document.getElementById("modal");
@@ -52,6 +52,16 @@ function formatDate(d) {
     month: "short",
   });
 }
+// Función para verificar si un horario ya pasó
+function isTimePassed(date, time) {
+  const now = new Date();
+  const [hours, minutes] = time.split(":").map(Number);
+
+  const slotDateTime = new Date(date);
+  slotDateTime.setHours(hours, minutes, 0, 0);
+
+  return slotDateTime < now;
+}
 
 // --- RENDERIZAR SEMANA ---
 async function renderWeek() {
@@ -61,7 +71,15 @@ async function renderWeek() {
   weekRange.textContent = `${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`;
 
   weekGrid.innerHTML = "";
-  const horarios = ["09:00", "10:30", "12:00", "15:00", "17:00"];
+  const horarios = [
+    "09:00",
+    "10:00",
+    "11:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+  ];
 
   // --- CONSULTAR CITAS OCUPADAS EN ESTA SEMANA ---
   const { data: citas, error } = await supabase
@@ -92,10 +110,14 @@ async function renderWeek() {
 
       const dateStr = date.toISOString().split("T")[0];
       const ocupado = citas?.some((c) => c.fecha === dateStr && c.hora === h);
+      const tiempoPasado = isTimePassed(date, h);
 
       if (ocupado) {
         slot.classList.add("ocupado");
         slot.textContent = h + " (Ocupado)";
+      } else if (tiempoPasado) {
+        slot.classList.add("pasado");
+        slot.textContent = h + " (Pasado)";
       } else {
         slot.addEventListener("click", () => openBookingModal(date, h));
       }
@@ -118,6 +140,7 @@ nextWeekBtn.addEventListener("click", () => {
   currentWeek++;
   renderWeek();
 });
+
 renderWeek();
 
 function openBookingModal(date, time) {
@@ -171,13 +194,3 @@ bookingForm.addEventListener("submit", async (e) => {
     }, 1500);
   }
 });
-
-// Función de contacto
-function contactar(servicio) {
-  alert(
-    `Has solicitado información sobre: ${servicio}. Serás redirigido a WhatsApp para más detalles.`
-  );
-  window.location.href =
-    "https://wa.me/573133574711?text=Hola,%20estoy%20interesado%20en%20el%20servicio%20de%20" +
-    encodeURIComponent(servicio);
-}
