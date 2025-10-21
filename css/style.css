@@ -1291,3 +1291,125 @@ s .section-title {
     text-align: center;
   }
 }
+/* Para móviles en modo landscape (horizontal) */
+/* Solo para móviles en modo landscape */
+@media (max-width: 916px) and (orientation: landscape) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    position: relative;
+    z-index: 1001;
+    gap: 2px;
+    color: #4caf50;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+  }
+
+  .hamburger .bars {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .hamburger .bars span {
+    display: block;
+    height: 2px;
+    width: 20px;
+    background: #4caf50;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+  }
+
+  .nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    flex-direction: column;
+    padding: 80px 2rem 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    gap: 0;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .nav.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav a {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .nav a.cta {
+    margin-top: 15px;
+    text-align: center;
+    background: #4caf50;
+    color: white;
+    border-radius: 8px;
+    padding: 12px 20px;
+  }
+
+  /* Ocultar navegación normal en landscape */
+  .nav:not(.active) {
+    display: none;
+  }
+
+  /* Animación del hamburguesa cuando está activo */
+  .hamburger.active {
+    background: #4caf50;
+    color: white;
+  }
+
+  .hamburger.active .bars span {
+    background: white;
+  }
+}
+/* Animación del hamburguesa a X - MEJORADA */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background: var(--dark);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+  background: #333;
+}
+
+/* Para pantallas landscape muy pequeñas */
+@media (max-width: 768px) and (orientation: landscape) and (max-height: 400px) {
+  .nav {
+    padding: 60px 1rem 1rem;
+  }
+
+  .nav a {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}

@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = nav.querySelectorAll("a");
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 916) {
           nav.classList.remove("active");
           hamburger.classList.remove("active");
         }
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Cerrar menú al redimensionar la ventana
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 916) {
         nav.classList.remove("active");
         hamburger.classList.remove("active");
       }
