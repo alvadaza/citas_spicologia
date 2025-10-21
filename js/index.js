@@ -194,3 +194,34 @@ bookingForm.addEventListener("submit", async (e) => {
     }, 1500);
   }
 });
+// Menú hamburguesa
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+
+  if (hamburger && nav) {
+    hamburger.addEventListener("click", function () {
+      nav.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    });
+
+    // Cerrar menú al hacer clic en un enlace (en móviles)
+    const navLinks = nav.querySelectorAll("a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          nav.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+    });
+
+    // Cerrar menú al redimensionar la ventana
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        nav.classList.remove("active");
+        hamburger.classList.remove("active");
+      }
+    });
+  }
+});
