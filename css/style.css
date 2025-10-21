@@ -115,18 +115,24 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
-  width: 30px;
-  height: 25px;
+  padding: 8px;
+  width: auto;
+  height: auto;
   position: relative;
+  z-index: 1001;
+  align-items: center;
+  gap: 2px;
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .hamburger span {
   display: block;
   height: 3px;
-  width: 100%;
+  width: 25px;
   background: #4caf50;
-  margin: 3px 0;
+  margin: 2px 0;
   transition: all 0.3s ease;
   border-radius: 2px;
   transform-origin: center;
@@ -1027,7 +1033,7 @@ body {
   /* Animación del hamburguesa a X - MEJORADA */
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
-    background: #333;
+    background: var(--dark);
   }
 
   .hamburger.active span:nth-child(2) {
